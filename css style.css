@@ -1,62 +1,173 @@
-/* Variables CSS */
+/* ================ */
+/* STYLES GÉNÉRAUX */
+/* ================ */
 :root {
-    --primary-color: #4a6bff;
-    --secondary-color: #f8f9fa;
-    --dark-color: #343a40;
-    --light-color: #ffffff;
+  --primary-color: #4a6bff;
+  --secondary-color: #f8f9fa;
+  --success-color: #28a745;
+  --dark-color: #343a40;
+  --light-color: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 10px;
 }
 
-/* Base Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: var(--secondary-color);
+  margin: 0;
+  min-height: 100vh;
 }
 
-.hero-section {
-    padding: 100px 0;
-    background-color: var(--secondary-color);
-}
-
-.hero-section h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.step-number {
-    background-color: var(--primary-color);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-weight: bold;
+/* ===================== */
+/* STRUCTURES COMMUNES */
+/* ===================== */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .card {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: 100%;
+  background: var(--light-color);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 450px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.card-logo {
+  max-width: 150px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 60px 0;
-        text-align: center;
-    }
-    
-    .hero-section img {
-        margin-top: 30px;
-    }
+.card-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--dark-color);
+}
+
+/* ================= */
+/* FORMULAIRES */
+/* ================= */
+.form-control {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-text {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+.form-check {
+  margin-bottom: 0.5rem;
+}
+
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ================= */
+/* BOUTONS */
+/* ================= */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #3a5bd9;
+}
+
+/* ================= */
+/* COMPOSANTS SPÉCIFIQUES */
+/* ================= */
+/* Checkmark de confirmation */
+.checkmark {
+  color: var(--success-color);
+  font-size: 60px;
+  line-height: 1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Étapes suivantes */
+.next-steps {
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+}
+
+.next-steps ol {
+  padding-left: 20px;
+}
+
+/* Champs conditionnels pros */
+#proFields {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* Liens */
+.text-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 0.8rem;
+}
+
+/* ================= */
+/* RÉACTIVITÉ */
+/* ================= */
+@media (max-width: 576px) {
+  .card {
+    padding: 20px;
+  }
+  
+  .card-logo {
+    max-width: 120px;
+  }
 }
