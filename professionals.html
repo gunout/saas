@@ -1,18 +1,49 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professionnels - ProWork</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', systemDark ? 'dark' : 'light');
+            }
+        }
+        
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
 </head>
 <body>
-    <!-- Navigation (identique à l'index) -->
+    <div class="theme-switch">
+        <div class="switch-container">
+            <span class="switch-label">🌙</span>
+            <label class="switch">
+                <input type="checkbox" onclick="toggleTheme()" aria-label="Changer le thème">
+                <span class="slider"></span>
+            </label>
+            <span class="switch-label">☀️</span>
+        </div>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html" aria-label="Retour à l'accueil">ProWork</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">ProWork</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,21 +53,19 @@
                     <li class="nav-item"><a class="nav-link" href="testimonials.html">Avis</a></li>
                 </ul>
                 <div class="d-flex">
-                    <a href="login.html" class="btn btn-outline-primary me-2" role="button">Connexion</a>
-                    <a href="register.html" class="btn btn-primary" role="button">Inscription</a>
+                    <a href="login.html" class="btn btn-outline-primary me-2">Connexion</a>
+                    <a href="register.html" class="btn btn-primary">Inscription</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="container my-5">
         <div class="row mb-4">
             <div class="col-12">
                 <h1 class="text-center mb-4">Nos Professionnels Qualifiés</h1>
-                <p class="lead text-center">Trouvez le professionnel idéal pour votre projet parmi notre réseau certifié</p>
+                <p class="lead text-center">Trouvez le professionnel idéal pour votre projet</p>
                 
-                <!-- Filtres -->
                 <div class="card mb-4">
                     <div class="card-body">
                         <form id="filterForm">
@@ -48,13 +77,11 @@
                                         <option value="plombier">Plombier</option>
                                         <option value="electricien">Électricien</option>
                                         <option value="peintre">Peintre</option>
-                                        <option value="maçon">Maçon</option>
-                                        <option value="menuiserie">Menuiserie</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="location" class="form-label">Localisation</label>
-                                    <input type="text" class="form-control" id="location" placeholder="Code postal ou ville">
+                                    <input type="text" class="form-control" id="location" placeholder="Code postal">
                                 </div>
                                 <div class="col-md-4 d-flex align-items-end">
                                     <button type="submit" class="btn btn-primary w-100">Filtrer</button>
@@ -66,21 +93,19 @@
             </div>
         </div>
 
-        <!-- Liste des professionnels -->
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-top bg-secondary" style="height: 200px; background-image: url('images/pro1.jpg'); background-size: cover;"></div>
+                <div class="card h-100 pro-card">
+                    <div class="pro-img" style="background-image: url('images/pro1.jpg')"></div>
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex justify-content-between mb-2">
                             <h3 class="h5 mb-0">Électricité Pro</h3>
                             <span class="badge bg-success">4.9 ★</span>
                         </div>
-                        <p class="text-muted small">Spécialiste en installations électriques et domotique</p>
+                        <p class="text-muted small">Spécialiste en installations électriques</p>
                         <ul class="list-unstyled small mb-3">
                             <li class="mb-1"><strong>Localisation:</strong> Paris (75)</li>
                             <li class="mb-1"><strong>Expérience:</strong> 12 ans</li>
-                            <li><strong>Certifications:</strong> Qualifelec, RGE</li>
                         </ul>
                         <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
                     </div>
@@ -88,18 +113,17 @@
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-top bg-secondary" style="height: 200px; background-image: url('images/pro2.jpg'); background-size: cover;"></div>
+                <div class="card h-100 pro-card">
+                    <div class="pro-img" style="background-image: url('images/pro2.jpg')"></div>
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex justify-content-between mb-2">
                             <h3 class="h5 mb-0">Rénovation Express</h3>
                             <span class="badge bg-success">4.7 ★</span>
                         </div>
-                        <p class="text-muted small">Rénovation complète d'appartements et maisons</p>
+                        <p class="text-muted small">Rénovation complète</p>
                         <ul class="list-unstyled small mb-3">
                             <li class="mb-1"><strong>Localisation:</strong> Lyon (69)</li>
                             <li class="mb-1"><strong>Expérience:</strong> 8 ans</li>
-                            <li><strong>Certifications:</strong> RGE, CAPEB</li>
                         </ul>
                         <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
                     </div>
@@ -107,18 +131,17 @@
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-top bg-secondary" style="height: 200px; background-image: url('images/pro3.jpg'); background-size: cover;"></div>
+                <div class="card h-100 pro-card">
+                    <div class="pro-img" style="background-image: url('images/pro3.jpg')"></div>
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex justify-content-between mb-2">
                             <h3 class="h5 mb-0">Plomberie Moderne</h3>
                             <span class="badge bg-success">4.8 ★</span>
                         </div>
-                        <p class="text-muted small">Installation et dépannage plomberie sanitaire</p>
+                        <p class="text-muted small">Installation et dépannage</p>
                         <ul class="list-unstyled small mb-3">
                             <li class="mb-1"><strong>Localisation:</strong> Marseille (13)</li>
                             <li class="mb-1"><strong>Expérience:</strong> 15 ans</li>
-                            <li><strong>Certifications:</strong> Qualibat, RGE</li>
                         </ul>
                         <a href="#" class="btn btn-outline-primary btn-sm">Voir le profil</a>
                     </div>
@@ -126,15 +149,13 @@
             </div>
         </div>
 
-        <!-- Pagination -->
         <nav aria-label="Page navigation" class="mt-4">
             <ul class="pagination justify-content-center">
                 <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+                    <a class="page-link" href="#">Précédent</a>
                 </li>
                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
                     <a class="page-link" href="#">Suivant</a>
                 </li>
@@ -142,65 +163,45 @@
         </nav>
     </main>
 
-    <!-- CTA Section -->
     <section class="py-5 bg-primary text-white">
         <div class="container text-center">
             <h2 class="mb-4">Vous êtes professionnel ?</h2>
-            <p class="lead mb-4">Rejoignez notre réseau et développez votre activité</p>
             <a href="register.html" class="btn btn-light btn-lg">Inscription professionnelle</a>
         </div>
     </section>
 
-    <!-- Footer (identique à l'index) -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5 class="h6">ProWork</h5>
-                    <p>La plateforme de référence pour vos travaux de rénovation et construction.</p>
+                    <p>La plateforme pour vos travaux.</p>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5 class="h6">Liens utiles</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">CGU</a></li>
-                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Confidentialité</a></li>
-                        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">CGU</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5 class="h6">Newsletter</h5>
-                    <form id="newsletter-form" novalidate>
+                    <form id="newsletter-form">
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Votre email" required aria-label="Votre adresse email">
+                            <input type="email" class="form-control" placeholder="Votre email">
                             <button class="btn btn-primary" type="submit">S'inscrire</button>
                         </div>
-                        <div class="form-text text-white-50">Nous ne partageons pas votre email.</div>
                     </form>
                 </div>
             </div>
             <hr class="my-4 bg-secondary">
             <div class="text-center small">
-                <p class="mb-0">&copy; 2023 ProWork. Tous droits réservés.</p>
+                <p class="mb-0">&copy; 2023 ProWork</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Filtrage des professionnels
-        document.getElementById('filterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const profession = document.getElementById('profession').value;
-            const location = document.getElementById('location').value;
-            
-            // Ici vous ajouteriez la logique pour filtrer les professionnels
-            console.log('Filtres appliqués:', { profession, location });
-            
-            // Simulation de chargement
-            alert('Filtrage des professionnels en cours...');
-        });
-    </script>
 </body>
 </html>
