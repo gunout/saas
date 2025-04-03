@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avis Clients - ProWork</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation (identique à l'index) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Retour à l'accueil">ProWork</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#how-it-works">Comment ça marche</a></li>
+                    <li class="nav-item"><a class="nav-link" href="professionals.html">Professionnels</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="testimonials.html">Avis</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2" role="button">Connexion</a>
+                    <a href="register.html" class="btn btn-primary" role="button">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="mb-3">Ce que nos clients disent</h1>
+                <p class="lead">Découvrez les expériences de nos utilisateurs avec ProWork</p>
+                
+                <!-- Note moyenne -->
+                <div class="d-flex justify-content-center align-items-center mb-4">
+                    <div class="display-4 me-3">4.8</div>
+                    <div class="text-start">
+                        <div class="star-rating mb-1">
+                            ★★★★★
+                            <span class="text-muted small">(142 avis)</span>
+                        </div>
+                        <div class="small text-muted">Note moyenne basée sur les avis vérifiés</div>
+                    </div>
+                </div>
+                
+                <!-- Filtre par note -->
+                <div class="btn-group mb-4" role="group" aria-label="Filtrer par note">
+                    <button type="button" class="btn btn-outline-primary active">Tous</button>
+                    <button type="button" class="btn btn-outline-primary">5 ★</button>
+                    <button type="button" class="btn btn-outline-primary">4 ★</button>
+                    <button type="button" class="btn btn-outline-primary">3 ★</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avis clients -->
+        <div class="row g-4">
+            <!-- Avis 1 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-secondary me-3" style="width: 50px; height: 50px; background-image: url('images/avatar1.jpg'); background-size: cover;"></div>
+                                <div>
+                                    <h5 class="mb-0">Sophie D.</h5>
+                                    <small class="text-muted">Paris</small>
+                                </div>
+                            </div>
+                            <div class="text-primary">★★★★★</div>
+                        </div>
+                        <h4 class="h5">Rénovation complète d'appartement</h4>
+                        <p class="mb-0">"Grâce à ProWork, j'ai trouvé un excellent professionnel pour la rénovation de mon appartement. Les devis étaient clairs et comparables, et le suivi du projet a été impeccable. Je recommande vivement !"</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <small class="text-muted">Posté le 15/03/2023</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avis 2 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-secondary me-3" style="width: 50px; height: 50px; background-image: url('images/avatar2.jpg'); background-size: cover;"></div>
+                                <div>
+                                    <h5 class="mb-0">Thomas L.</h5>
+                                    <small class="text-muted">Lyon</small>
+                                </div>
+                            </div>
+                            <div class="text-primary">★★★★☆</div>
+                        </div>
+                        <h4 class="h5">Installation électrique</h4>
+                        <p class="mb-0">"Service très professionnel. J'ai reçu plusieurs devis rapidement et ai pu choisir en toute transparence. Le travail a été fait dans les délais et conforme aux attentes. Petit bémol sur la communication avec l'artisan une fois le chantier commencé."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <small class="text-muted">Posté le 02/02/2023</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avis 3 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-secondary me-3" style="width: 50px; height: 50px; background-image: url('images/avatar3.jpg'); background-size: cover;"></div>
+                                <div>
+                                    <h5 class="mb-0">Émilie R.</h5>
+                                    <small class="text-muted">Bordeaux</small>
+                                </div>
+                            </div>
+                            <div class="text-primary">★★★★★</div>
+                        </div>
+                        <h4 class="h5">Dépannage plomberie</h4>
+                        <p class="mb-0">"Urgence résolue en moins de 2h ! Le plombier était compétent, sympathique et a réglé mon problème de fuite rapidement. Le prix était juste et correspondait au devis. Je reviendrai sans hésiter pour mes futurs travaux."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <small class="text-muted">Posté le 22/01/2023</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avis 4 -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle bg-secondary me-3" style="width: 50px; height: 50px; background-image: url('images/avatar4.jpg'); background-size: cover;"></div>
+                                <div>
+                                    <h5 class="mb-0">Marc B.</h5>
+                                    <small class="text-muted">Marseille</small>
+                                </div>
+                            </div>
+                            <div class="text-primary">★★★★★</div>
+                        </div>
+                        <h4 class="h5">Peinture intérieure</h4>
+                        <p class="mb-0">"Excellent rapport qualité-prix. Le peintre était minutieux et a respecté mes demandes spécifiques concernant les couleurs. Le chantier a été propre et bien organisé. ProWork m'a fait gagner beaucoup de temps dans ma recherche."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <small class="text-muted">Posté le 10/01/2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Précédent</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Formulaire d'avis -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Donnez votre avis</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="testimonialForm">
+                            <div class="mb-3">
+                                <label class="form-label">Note</label>
+                                <div class="star-rating">
+                                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialTitle" class="form-label">Titre</label>
+                                <input type="text" class="form-control" id="testimonialTitle" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialText" class="form-label">Votre avis</label>
+                                <textarea class="form-control" id="testimonialText" rows="4" required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (identique à l'index) -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="h6">ProWork</h5>
+                    <p>La plateforme de référence pour vos travaux de rénovation et construction.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="h6">Liens utiles</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">CGU</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Confidentialité</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="h6">Newsletter</h5>
+                    <form id="newsletter-form" novalidate>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Votre email" required aria-label="Votre adresse email">
+                            <button class="btn btn-primary" type="submit">S'inscrire</button>
+                        </div>
+                        <div class="form-text text-white-50">Nous ne partageons pas votre email.</div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center small">
+                <p class="mb-0">&copy; 2023 ProWork. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Gestion de l'envoi d'avis
+        document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const rating = document.querySelector('input[name="rating"]:checked').value;
+            const title = document.getElementById('testimonialTitle').value;
+            const text = document.getElementById('testimonialText').value;
+            
+            // Ici vous ajouteriez la logique pour envoyer l'avis au backend
+            console.log('Avis soumis:', { rating, title, text });
+            
+            // Feedback utilisateur
+            alert('Merci pour votre avis ! Il sera publié après modération.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
