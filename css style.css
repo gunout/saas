@@ -24,7 +24,77 @@
   --border-radius: 10px;
   --transition: all 0.3s ease-in-out;
 }
+/* ================= */
+/* PROFESSIONNELS */
+/* ================= */
+.pro-card {
+    transition: var(--transition);
+    border: 1px solid var(--border);
+}
 
+.pro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pro-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* ================= */
+/* AVIS CLIENTS */
+/* ================= */
+.testimonial-card {
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    border-color: var(--primary);
+}
+
+.star-rating {
+    font-size: 1.5rem;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    float: right;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: gold;
+}
+
+/* ================= */
+/* PAGINATION */
+/* ================= */
+.page-item.active .page-link {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-link {
+    color: var(--primary);
+}
+
+.page-link:hover {
+    color: var(--primary);
+    opacity: 0.8;
+}
 [data-theme="light"] {
   --primary: var(--primary-light);
   --secondary: var(--secondary-light);
